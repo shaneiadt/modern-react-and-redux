@@ -1,7 +1,7 @@
 import React from 'react';
 import { name, image } from 'faker';
 
-export const Comment = ({ author = name.firstName(), avatar = image.avatar() }) => {
+export const Comment = ({ author = name.firstName(), avatar = image.avatar(), timeAgo = "Today at 12:00pm", comment = "Nice blog post!" }) => {
     return (
         <div className="comment">
             <a href="/" className="avatar">
@@ -12,10 +12,10 @@ export const Comment = ({ author = name.firstName(), avatar = image.avatar() }) 
                     {author}
                 </a>
                 <div className="metadata">
-                    <span className="date">Today at 6:00 pm</span>
+                    <span className="date">{timeAgo}</span>
                 </div>
                 <div className="text">
-                    Nice blog post!
+                    {comment}
                 </div>
             </div>
         </div>
