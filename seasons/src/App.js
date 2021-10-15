@@ -12,7 +12,7 @@ export class App extends React.Component {
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      ({ coords: { latitude } }) => this.setState({ ...this.state, latitude }),
+      ({ coords: { latitude } }) => this.setState({ latitude }),
       (err) => console.error(err)
     );
   }
