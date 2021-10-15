@@ -6,7 +6,6 @@ export const App = () => {
       <Comment author="Shane" timeAgo="Today at 4:45pm" comment="This is my fav blogging platform." />
       <Comment comment="O hells yeah!"/>
       <Comment timeAgo="Yesterday at 5:00pm"/>
-      <Comment />
     </div>
   );
 }
