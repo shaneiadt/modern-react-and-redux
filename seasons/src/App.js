@@ -1,14 +1,9 @@
 import React from "react";
 
 export class App extends React.Component {
-  // eslint-disable-next-line
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      latitude: null,
-      errorMessage: ''
-    }
+  state = {
+    latitude: null,
+    errorMessage: ''
   }
 
   componentDidMount() {
