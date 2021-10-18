@@ -25,7 +25,7 @@ export const SeasonDisplay = ({ lat }) => {
     const season = getSeason(lat, new Date().getMonth());
 
     return (
-        <div>
+        <div className={`${season} season-display`}>
             <i className={`${config[season].iconName} icon massive icon-left`} />
             <h1>{config[season].text}</h1>
             <i className={`${config[season].iconName} icon massive icon-right`} />
