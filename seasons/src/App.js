@@ -18,7 +18,7 @@ export class App extends React.Component {
   render() {
     const { latitude, errorMessage } = this.state;
 
-    if (errorMessage === '' && !latitude) return <Spinner />;
+    if (errorMessage === '' && !latitude) return <Spinner text="Please except geolocation request" />;
     if (errorMessage !== '') return <p>{errorMessage}</p>;
 
     return <SeasonDisplay lat={latitude} />
