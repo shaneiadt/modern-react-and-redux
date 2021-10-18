@@ -10,11 +10,14 @@ const getSeason = (lat, month) => {
 }
 
 export const SeasonDisplay = ({ lat }) => {
-    const month = getSeason(lat, new Date().getMonth());
+    const season = getSeason(lat, new Date().getMonth());
+    const getText = () => season === 'winter' ? <h1>Burr, it's chilly</h1> : <h1>Let's hit the beach</h1>
+    const getIcon = () => season === 'winter' ? <i className="snowflake icon" /> : <i className="sun icon" />
 
     return (
         <div>
-            Month: {month}
+            {getIcon()}
+            {getText()}
         </div>
     )
 }
