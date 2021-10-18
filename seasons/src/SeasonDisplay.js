@@ -27,6 +27,7 @@ export const SeasonDisplay = ({ lat }) => {
         <div>
             <i className={`${config[season].iconName} icon`} />
             <h1>{config[season].text}</h1>
+            <i className={`${config[season].iconName} icon`} />
         </div>
     )
 }
