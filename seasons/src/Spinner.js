@@ -1,9 +1,9 @@
 import React from "react";
 
-const Spinner = () => (
+const Spinner = ({ text = "Loading" }) => (
     <div className="ui active dimmer">
         <div className="ui big text loader">
-            Loading
+            {text}
         </div>
     </div>
 )
