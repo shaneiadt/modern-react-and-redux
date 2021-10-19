@@ -1,9 +1,14 @@
 import React from "react";
+import { Form } from "semantic-ui-react";
 
 export class SearchBar extends React.Component {
-    render(){
-        return(
-            <div>Search bar</div>
+    render() {
+        return (
+            <Form>
+                <Form.Field>
+                    <input placeholder='Search' />
+                </Form.Field>
+            </Form>
         );
     }
 }
