@@ -1,8 +1,10 @@
 import { Container, Form, Checkbox, Button } from 'semantic-ui-react';
+import { SearchBar } from '../SearchBar/SearchBar';
 
 function App() {
     return (
         <Container>
+            <SearchBar />
             <Form>
                 <Form.Field>
                     <label>First Name</label>
