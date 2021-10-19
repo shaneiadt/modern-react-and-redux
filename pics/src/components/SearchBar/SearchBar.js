@@ -1,12 +1,17 @@
 import React from "react";
-import { Form } from "semantic-ui-react";
+import { Form, Input } from "semantic-ui-react";
 
 export class SearchBar extends React.Component {
+
+    onInputChange(_, { value }) {
+        console.log(value);
+    }
+
     render() {
         return (
             <Form>
                 <Form.Field>
-                    <input placeholder='Image Search' />
+                    <Input placeholder='Image Search' onChange={this.onInputChange} />
                 </Form.Field>
             </Form>
         );
