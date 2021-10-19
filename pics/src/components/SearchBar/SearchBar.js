@@ -6,7 +6,7 @@ export class SearchBar extends React.Component {
         return (
             <Form>
                 <Form.Field>
-                    <input placeholder='Search' />
+                    <input placeholder='Image Search' />
                 </Form.Field>
             </Form>
         );
