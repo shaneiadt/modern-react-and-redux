@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { EditorState } from 'draft-js';
+import { EditorState, convertToRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
+import draftToHtml from 'draftjs-to-html';
 import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import './App.css';
 
 export default class EditorConvertToHTML extends Component {
   state = {
@@ -15,29 +15,20 @@ export default class EditorConvertToHTML extends Component {
     });
   };
 
-  addStuff = () => {
-      
-  }
-
   render() {
     const { editorState } = this.state;
-
     return (
       <div>
         <Editor
-          wrapperClassName="wrapper-class"
-          editorClassName="editor-class"
-          toolbarClassName="toolbar-class"
           editorState={editorState}
+          wrapperClassName="demo-wrapper"
+          editorClassName="demo-editor"
           onEditorStateChange={this.onEditorStateChange}
-          toolbar={{
-            options: ['inline', 'fontSize', 'textAlign', 'blockType', 'history'],
-            blockType: {
-              inDropdown: false
-            }
-          }}
         />
-        <button type="button" onClick={}>CLICK ME</button>
+        <textarea
+          disabled
+          value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
+        />
       </div>
     );
   }
