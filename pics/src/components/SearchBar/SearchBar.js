@@ -11,9 +11,13 @@ export class SearchBar extends React.Component {
         this.setState({ ...this.state, term: value });
     }
 
+    onSubmit = () => {
+        console.log(this.state.term);
+    }
+
     render() {
         return (
-            <Form loading={this.state.loading}>
+            <Form loading={this.state.loading} onSubmit={this.onSubmit}>
                 <Form.Field>
                     <Input placeholder='Image Search' value={this.state.term} onChange={this.onInputChange} />
                 </Form.Field>
