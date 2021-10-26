@@ -10,7 +10,7 @@ class App extends React.Component {
     render() {
         return (
             <Container style={{ padding: '20px', margin: '20px', border: '1px solid #f1f1f1', borderRadius: '5px' }}>
-                <SearchBar onSearchSubmit={this.onSearchSubmit} />
+                <SearchBar onSubmit={this.onSearchSubmit} />
             </Container>
         );
     }

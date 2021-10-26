@@ -13,7 +13,7 @@ export class SearchBar extends React.Component {
 
     render() {
         return (
-            <Form loading={this.state.loading} onSubmit={() => this.props.onSearchSubmit(this.state.term)}>
+            <Form loading={this.state.loading} onSubmit={() => this.props.onSubmit(this.state.term)}>
                 <Form.Field>
                     <Input placeholder='Image Search' value={this.state.term} onChange={this.onInputChange} />
                 </Form.Field>
