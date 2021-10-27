@@ -1,8 +1,17 @@
 import React from "react";
 
-export const ImageList = ({ images }) => {
-    console.log(images);
+export const ImageList = (props) => {
+    console.log(props.images);
+
+    const images = props.images.map((image, i) => {
+        return (
+            <img alt="some random" src={image.urls.regular} />
+        );
+    });
+
     return (
-        <div>ImageList</div>
+        <>
+            {images}
+        </>
     );
 }
