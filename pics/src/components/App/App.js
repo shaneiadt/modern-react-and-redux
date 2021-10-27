@@ -2,6 +2,7 @@ import React from 'react';
 import unsplash from '../../api/unsplash';
 import { Container } from 'semantic-ui-react';
 import { SearchBar } from '../SearchBar/SearchBar';
+import { ImageList } from '../ImageList/ImageList';
 
 class App extends React.Component {
     state = { images: [], loading: false };
@@ -31,7 +32,7 @@ class App extends React.Component {
                 </Container>
                 {this.state.images &&
                     <Container>
-                        {this.state.images.length}
+                        <ImageList images={this.state.images} />
                     </Container>
                 }
             </>
