@@ -7,8 +7,8 @@ export class ImageCard extends React.Component {
         this.imgRef = React.createRef();
     }
 
-    componentDidMount() {
-        console.log(this.imgRef);
+    onLoad = () => {
+        console.log(this.imgRef.current.clientHeight);
     }
 
     render() {
@@ -16,7 +16,7 @@ export class ImageCard extends React.Component {
 
         return (
             <div>
-                <img ref={this.imgRef} alt={description} src={regular} />
+                <img ref={this.imgRef} alt={description} src={regular} onLoad={this.onLoad} />
             </div>
         )
     }
