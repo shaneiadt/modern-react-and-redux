@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import unsplash from '../../api/unsplash';
 import { Container } from 'semantic-ui-react';
 import { SearchBar } from '../SearchBar/SearchBar';
 
@@ -10,12 +10,9 @@ class App extends React.Component {
         this.setState({ loading: true });
 
         try {
-            const request = await axios.get('https://api.unsplash.com/search/photos', {
+            const request = await unsplash.get('/search/photos', {
                 params: {
                     query: { term }
-                },
-                headers: {
-                    Authorization: 'Client-ID tw9QXKnDfli2JMKwguRSXBWaNvymA9rESKHzoIqfvVo'
                 }
             });
 
