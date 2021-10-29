@@ -11,9 +11,7 @@ export const AccordionComponent = ({ items }) => {
     return (
         <Accordion fluid styled>
             {items.map((item, index) => (
-                <div
-                    key={`accordion-item-${index}`}
-                >
+                <React.Fragment key={`accordion-item-${index}`}>
                     <Accordion.Title
                         active={activeIndex === index}
                         index={index}
@@ -27,7 +25,7 @@ export const AccordionComponent = ({ items }) => {
                             {item.content}
                         </p>
                     </Accordion.Content>
-                </div>
+                </React.Fragment>
             ))}
         </Accordion>
     );
