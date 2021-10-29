@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Accordion } from '../Accordion/Accordion';
+import { AccordionComponent } from '../Accordion/Accordion';
 
 const items = [
   {
@@ -20,7 +20,7 @@ const items = [
 function App() {
   return (
     <div>
-      <Accordion items={items} />
+      <AccordionComponent items={items} />
     </div>
   );
 }
