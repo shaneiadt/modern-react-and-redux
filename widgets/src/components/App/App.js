@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "semantic-ui-react";
 
 import { AccordionComponent } from '../Accordion/Accordion';
 
@@ -19,9 +20,9 @@ const items = [
 
 function App() {
   return (
-    <div>
+    <Container>
       <AccordionComponent items={items} />
-    </div>
+    </Container>
   );
 }
 
