@@ -1,9 +1,11 @@
 import React from "react";
 
+import { Accordion } from '../Accordion/Accordion';
+
 function App() {
   return (
     <div>
-     APP
+      <Accordion />
     </div>
   );
 }
