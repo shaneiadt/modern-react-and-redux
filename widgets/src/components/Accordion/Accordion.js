@@ -4,8 +4,6 @@ import { Accordion, Icon } from 'semantic-ui-react';
 export const AccordionComponent = ({ items }) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const handleClick = (index) => setActiveIndex(index);
-
     return (
         <Accordion fluid styled>
             {items.map((item, index) => (
@@ -13,7 +11,7 @@ export const AccordionComponent = ({ items }) => {
                     <Accordion.Title
                         active={activeIndex === index}
                         index={index}
-                        onClick={() => handleClick(index)}
+                        onClick={() => setActiveIndex(index)}
                     >
                         <Icon name='dropdown' />
                         {item.title}
