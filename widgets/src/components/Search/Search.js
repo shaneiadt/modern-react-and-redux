@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Search as Searchbox } from "semantic-ui-react";
+import { Search as Searchbox, Icon } from "semantic-ui-react";
 import axios from 'axios';
 
 export const Search = () => {
@@ -18,15 +18,15 @@ export const Search = () => {
                 }
             });
 
-            setResults(data.query.search.map(({ title, snippet }) => ({ title, description: snippet })));
+            setResults(data.query.search.map(({ pageid, title, snippet }) => ({ pageid, title, description: snippet })));
         };
 
         if (term) search();
     }, [term]);
 
-    const resultsRenderer = ({ title, description }) => (
+    const resultsRenderer = ({ pageid, title, description }) => (
         <>
-            <h4>{title}</h4>
+            <a href={`https://en.wikipedia.org?curid=${pageid}`} target='_blank'>{title} <Icon name='linkify' size='small' /></a>
             <div dangerouslySetInnerHTML={{ __html: description }} />
         </>
     );
