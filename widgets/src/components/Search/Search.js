@@ -5,9 +5,18 @@ import axios from 'axios';
 import './Search.css';
 
 export const Search = () => {
-    const [term, setTerm] = useState('');
+    const [term, setTerm] = useState('programming');
+    const [debouncedTerm, setDebouncedTerm] = useState(term);
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState([]);
+
+    useEffect(() => {
+        const timerId = setTimeout(() => {
+            setDebouncedTerm(term);
+        }, 1000);
+
+        return () => clearTimeout(timerId);
+    }, [term]);
 
     useEffect(() => {
         const search = async () => {
@@ -18,7 +27,7 @@ export const Search = () => {
                     list: "search",
                     origin: "*",
                     format: "json",
-                    srsearch: term
+                    srsearch: debouncedTerm
                 }
             });
 
@@ -26,12 +35,8 @@ export const Search = () => {
             setLoading(false);
         };
 
-        const timeoutId = setTimeout(() => {
-            if (term) search();
-        }, 500);
-
-        return () => clearTimeout(timeoutId);
-    }, [term]);
+        search();
+    }, [debouncedTerm]);
 
     const resultsRenderer = ({ pageid, title, description }) => (
         <>
