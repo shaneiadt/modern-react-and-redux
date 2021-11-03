@@ -30,7 +30,6 @@ export const Search = () => {
                     srsearch: debouncedTerm
                 }
             });
-
             setResults(data.query.search.map(({ pageid, title, snippet }) => ({ pageid, title, description: snippet })));
             setLoading(false);
         };
