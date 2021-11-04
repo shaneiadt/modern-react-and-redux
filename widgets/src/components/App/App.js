@@ -22,21 +22,9 @@ import { Dropdown } from '../Dropdown/Dropdown';
 // ];
 
 const options = [
-  {
-    key: 'Jenny Hess',
-    text: 'Jenny Hess',
-    value: 'Jenny Hess',
-  },
-  {
-    key: 'Elliot Fu',
-    text: 'Elliot Fu',
-    value: 'Elliot Fu',
-  },
-  {
-    key: 'Stevie Feliciano',
-    text: 'Stevie Feliciano',
-    value: 'Stevie Feliciano',
-  }
+  { key: 1, text: 'One', value: 1 },
+  { key: 2, text: 'Two', value: 2 },
+  { key: 3, text: 'Three', value: 3 },
 ]
 
 function App() {
