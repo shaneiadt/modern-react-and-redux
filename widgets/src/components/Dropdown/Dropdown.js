@@ -1,7 +1,12 @@
 import React from "react";
+import { Dropdown as DDown } from "semantic-ui-react";
 
-export const DropDown = () => {
+export const Dropdown = ({ options }) => {
     return (
-        <div>Dropdown</div>
+        <DDown
+            placeholder='Select An Option'
+            fluid
+            selection
+            options={options} />
     );
 }

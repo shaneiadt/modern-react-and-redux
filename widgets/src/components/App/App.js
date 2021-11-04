@@ -2,7 +2,9 @@ import React from "react";
 import { Container } from "semantic-ui-react";
 
 // import { AccordionComponent } from '../Accordion/Accordion';
-import { Search } from "../Search/Search";
+// import { Search } from "../Search/Search";
+
+import { Dropdown } from '../Dropdown/Dropdown';
 
 // const items = [
 //   {
@@ -19,11 +21,30 @@ import { Search } from "../Search/Search";
 //   }
 // ];
 
+const options = [
+  {
+    key: 'Jenny Hess',
+    text: 'Jenny Hess',
+    value: 'Jenny Hess',
+  },
+  {
+    key: 'Elliot Fu',
+    text: 'Elliot Fu',
+    value: 'Elliot Fu',
+  },
+  {
+    key: 'Stevie Feliciano',
+    text: 'Stevie Feliciano',
+    value: 'Stevie Feliciano',
+  }
+]
+
 function App() {
   return (
     <Container>
       {/* <AccordionComponent items={items} /> */}
-      <Search />
+      {/* <Search /> */}
+      <Dropdown options={options} />
     </Container>
   );
 }
