@@ -18,7 +18,7 @@ export const Translate = () => {
         <>
             <p><Input onChange={(e, { value }) => setText(value)} value={text} placeholder="Enter text to translate..." fluid /></p>
             <p><Dropdown selection={lang.value} onSelectedChange={onSelectedChange} options={options.map(({ value, label }) => ({ key: value, text: label, value }))} /></p>
-            <p>...</p>
+            <p>{process.env.REACT_APP_GOOGLE_TRANSLATE_API_KEY}</p>
         </>
     );
 }
