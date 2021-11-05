@@ -3,8 +3,9 @@ import { Container } from "semantic-ui-react";
 
 // import { AccordionComponent } from '../Accordion/Accordion';
 // import { Search } from "../Search/Search";
+// import { Dropdown } from '../Dropdown/Dropdown';
 
-import { Dropdown } from '../Dropdown/Dropdown';
+import { Translate } from "../Translate/Translate";
 
 // const items = [
 //   {
@@ -21,10 +22,16 @@ import { Dropdown } from '../Dropdown/Dropdown';
 //   }
 // ];
 
+// const options = [
+//   { key: 1, text: 'One', value: 1 },
+//   { key: 2, text: 'Two', value: 2 },
+//   { key: 3, text: 'Three', value: 3 },
+// ]
+
 const options = [
-  { key: 1, text: 'One', value: 1 },
-  { key: 2, text: 'Two', value: 2 },
-  { key: 3, text: 'Three', value: 3 },
+  { label: "Afrikaans", value: "af" },
+  { label: "Arabic", value: "ar" },
+  { label: "Hindi", value: "hi" },
 ]
 
 function App() {
@@ -32,7 +39,8 @@ function App() {
     <Container>
       {/* <AccordionComponent items={items} /> */}
       {/* <Search /> */}
-      <Dropdown options={options} />
+      {/* <Dropdown options={options} /> */}
+      <Translate options={options} />
     </Container>
   );
 }
