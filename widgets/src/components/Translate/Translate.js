@@ -11,6 +11,6 @@ export const Translate = ({ language = "en" }) => {
     const [lang, setLang] = useState(language);
 
     return (
-        <Dropdown />
+        <Dropdown options={options} />
     );
 }
