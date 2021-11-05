@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Translate = () => {
+export const Translate = ({ options, lang }) => {
     return (
         <div>
             Translate
