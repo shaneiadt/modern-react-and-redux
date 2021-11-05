@@ -11,6 +11,6 @@ export const Translate = ({ language = "en" }) => {
     const [lang, setLang] = useState(language);
 
     return (
-        <Dropdown options={options} />
+        <Dropdown options={options.map(({ value, label }) => ({ key: value, text: label, value }))} />
     );
 }
