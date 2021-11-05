@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 
 export const Convert = ({ lang, text }) => {
     useEffect(() => {
-        
-    }, [language, text]);
+
+    }, [lang, text]);
 
     return (
         <div>

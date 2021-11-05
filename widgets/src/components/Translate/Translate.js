@@ -19,7 +19,7 @@ export const Translate = () => {
         <>
             <p><Input onChange={(e, { value }) => setText(value)} value={text} placeholder="Enter text to translate..." fluid /></p>
             <p><Dropdown selection={lang.value} onSelectedChange={onSelectedChange} options={options.map(({ value, label }) => ({ key: value, text: label, value }))} /></p>
-            <p><Convert /></p>
+            <p><Convert lang={lang.value} text={text} /></p>
         </>
     );
 }
