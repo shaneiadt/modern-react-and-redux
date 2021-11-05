@@ -28,19 +28,13 @@ import { Translate } from "../Translate/Translate";
 //   { key: 3, text: 'Three', value: 3 },
 // ]
 
-const options = [
-  { label: "Afrikaans", value: "af" },
-  { label: "Arabic", value: "ar" },
-  { label: "Hindi", value: "hi" },
-]
-
 function App() {
   return (
     <Container>
       {/* <AccordionComponent items={items} /> */}
       {/* <Search /> */}
       {/* <Dropdown options={options} /> */}
-      <Translate options={options} />
+      <Translate />
     </Container>
   );
 }
