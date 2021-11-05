@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Dropdown as DDown } from "semantic-ui-react";
 
-export const Dropdown = ({ options }) => {
-    const [state, setState] = useState({});
-    const handleChange = (e, { value }) => setState({ value });
-
+export const Dropdown = ({ options, selection, onSelectedChange }) => {
     return (
         <DDown
             placeholder='Select An Option'
-            onChange={handleChange}
+            onChange={onSelectedChange}
             fluid
             selection
-            value={state.value}
+            value={selection}
             options={options} />
     );
 }

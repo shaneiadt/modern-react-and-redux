@@ -7,10 +7,12 @@ const options = [
     { label: "Hindi", value: "hi" },
 ];
 
-export const Translate = ({ language = "en" }) => {
-    const [lang, setLang] = useState(language);
+export const Translate = () => {
+    const [lang, setLang] = useState(options[0]);
+
+    const onSelectedChange = (e, { value }) => setLang(options.find(option => option.value === value));
 
     return (
-        <Dropdown options={options.map(({ value, label }) => ({ key: value, text: label, value }))} />
+        <Dropdown selection={lang.value} onSelectedChange={onSelectedChange} options={options.map(({ value, label }) => ({ key: value, text: label, value }))} />
     );
 }
