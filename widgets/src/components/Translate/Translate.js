@@ -7,8 +7,8 @@ const options = [
     { label: "Hindi", value: "hi" },
 ];
 
-export const Translate = ({ lang = "en" }) => {
-    const [lang, setLang] = useState(lang);
+export const Translate = ({ language = "en" }) => {
+    const [lang, setLang] = useState(language);
 
     return (
         <Dropdown />
