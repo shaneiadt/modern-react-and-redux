@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu } from "semantic-ui-react";
+import { Link } from "../Link/Link";
 
 export const Header = ({ activeItem = '/', onItemClicked }) => {
     return (
@@ -8,7 +9,9 @@ export const Header = ({ activeItem = '/', onItemClicked }) => {
                 name="accordian"
                 active={activeItem === '/'}
                 onClick={onItemClicked}
-            />
+            >
+                <Link />
+            </Menu.Item>
             <Menu.Item
                 name="search"
                 active={activeItem === '/search'}
