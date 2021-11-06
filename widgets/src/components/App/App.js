@@ -4,6 +4,7 @@ import { AccordionComponent } from '../Accordion/Accordion';
 import { Search } from '../Search/Search';
 import { Dropdown } from '../Dropdown/Dropdown';
 import { Translate } from '../Translate/Translate';
+import { Route } from "../Route/Route";
 
 const items = [
   {
@@ -20,37 +21,12 @@ const items = [
   }
 ];
 
-const showAccordian = () => {
-  if (window.location.pathname === '/') {
-    return <AccordionComponent items={items} />;
-  }
-}
-
-const showList = () => {
-  if (window.location.pathname === '/list') {
-    return <Search />;
-  }
-}
-
-const showDropdown = () => {
-  if (window.location.pathname === '/dropdown') {
-    return <Dropdown />;
-  }
-}
-
-const showTranslate = () => {
-  if (window.location.pathname === '/translate') {
-    return <Translate />;
-  }
-}
-
 function App() {
   return (
     <Container>
-      {showAccordian()}
-      {showDropdown()}
-      {showList()}
-      {showTranslate()}
+      <Route path="/">
+        <AccordionComponent items={items} />
+      </Route>
     </Container>
   );
 }
