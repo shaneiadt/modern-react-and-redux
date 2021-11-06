@@ -28,8 +28,6 @@ export const Convert = ({ lang, text }) => {
     }, [lang, debouncedText]);
 
     return (
-        <div>
-            <h1>{translated}</h1>
-        </div>
+        <h1>{translated}</h1>
     )
 }
