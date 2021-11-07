@@ -31,7 +31,7 @@ const dropdownOptions = [
 function App() {
   return (
     <Container>
-      <Header activeItem={'/dropdown'} onItemClicked={() => console.log('click')} />
+      <Header />
       <Route path="/">
         <AccordionComponent items={items} />
       </Route>

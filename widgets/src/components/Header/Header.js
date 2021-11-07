@@ -2,7 +2,7 @@ import React from "react";
 import { Menu } from "semantic-ui-react";
 import { Link } from "../Link/Link";
 
-export const Header = ({ activeItem = '/' }) => {
+export const Header = () => {
     return (
         <Menu pointing secondary>
             <Menu.Item>
