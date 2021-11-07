@@ -5,28 +5,18 @@ import { Link } from "../Link/Link";
 export const Header = ({ activeItem = '/', onItemClicked }) => {
     return (
         <Menu pointing secondary>
-            <Menu.Item
-                name="accordian"
-                active={activeItem === '/'}
-                onClick={onItemClicked}
-            >
-                <Link />
+            <Menu.Item>
+                <Link href='/' className=''>Accordion</Link>
             </Menu.Item>
-            <Menu.Item
-                name="search"
-                active={activeItem === '/search'}
-                onClick={onItemClicked}
-            />
-            <Menu.Item
-                name="dropdown"
-                active={activeItem === '/dropdown'}
-                onClick={onItemClicked}
-            />
-            <Menu.Item
-                name="translate"
-                active={activeItem === '/translate'}
-                onClick={onItemClicked}
-            />
+            <Menu.Item>
+                <Link href='/list' className=''>Search</Link>
+            </Menu.Item>
+            <Menu.Item>
+                <Link href='/dropdown' className=''>Dropdown</Link>
+            </Menu.Item>
+            <Menu.Item>
+                <Link href='/translate' className=''>Translate</Link>
+            </Menu.Item>
         </Menu>
     );
 }
