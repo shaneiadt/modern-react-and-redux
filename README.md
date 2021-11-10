@@ -1,3 +1,3 @@
 # Modern React & Redux
 
-https://www.udemy.com/course/react-redux/
+https://www.udemy.com/course/react-redux/ :smile:
