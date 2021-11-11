@@ -1,4 +1,6 @@
-export const songsReducer = () => {
+import { combineReducers } from 'redux';
+
+const songsReducer = () => {
     return [
         {
             title: 'No Diggity', duration: '4:00'
@@ -12,7 +14,7 @@ export const songsReducer = () => {
     ];
 }
 
-export const selectedSongReducer = (selectedSong = null, action) => {
+const selectedSongReducer = (selectedSong = null, action) => {
     switch (action.type) {
         case 'SONG_SELECTED':
             return action.payload;
@@ -20,3 +22,8 @@ export const selectedSongReducer = (selectedSong = null, action) => {
             return selectedSong
     }
 }
+
+export default combineReducers({
+    songs: songsReducer,
+    selectedSong: selectedSongReducer
+});
