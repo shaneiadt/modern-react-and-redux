@@ -12,8 +12,7 @@ class SongList extends Component {
                 {songs.map(({ title, duration }) =>
                     <Item key={title} style={{ border: '1px solid #f1f1f1', padding: '10px', margin: '10px 0' }}>
                         <Item.Content style={{ display: 'flex', alignItems: 'center' }}>
-                            <Item.Header>{title}</Item.Header>
-                            <Item.Description>{duration}</Item.Description>
+                            <Item.Header><strong>{title}</strong> - {duration}</Item.Header>
                             <Item.Extra style={{ flexGrow: '1', textAlign: 'right' }}>
                                 <Button>Select</Button>
                             </Item.Extra>
