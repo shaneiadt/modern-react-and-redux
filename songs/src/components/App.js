@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from 'react-redux';
 
 import SongList from "./SongList";
 
@@ -10,4 +11,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default connect()(App);
