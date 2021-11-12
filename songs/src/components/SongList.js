@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 
-
-export default class SongList extends Component {
+class SongList extends Component {
     render() {
         return (
             <div>
@@ -10,3 +10,5 @@ export default class SongList extends Component {
         );
     }
 }
+
+export default connect()(SongList);
