@@ -10,7 +10,9 @@ class SongList extends Component {
     }
 
     render() {
-        const { songs } = this.props;
+        const { songs, selectedSong } = this.props;
+
+        console.log(this.props);
 
         return (
             <Container>
@@ -29,7 +31,7 @@ class SongList extends Component {
                         </Grid.Column>
                         <Grid.Column>
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
-                                <h2>SELECTED SONG</h2>
+                                <h2>{selectedSong ?? 'No Song Selected'}</h2>
                             </div>
                         </Grid.Column>
                     </Grid.Row>
@@ -41,7 +43,8 @@ class SongList extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        songs: state.songs
+        songs: state.songs,
+        selectedSong: state.selectedSong
     };
 }
 
