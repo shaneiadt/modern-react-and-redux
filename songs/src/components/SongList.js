@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { Button, Item, Container, Grid } from 'semantic-ui-react';
 
 import { selectSong } from '../actions';
+import SongDetail from "./SongDetail";
 
 class SongList extends Component {
     render() {
-        const { songs, selectedSong } = this.props;
+        const { songs } = this.props;
 
         return (
             <Container>
@@ -25,8 +26,7 @@ class SongList extends Component {
                         </Grid.Column>
                         <Grid.Column>
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', flexDirection: 'column' }}>
-                                <h2>{selectedSong ? `${selectedSong.title}` : 'No Song Selected'}</h2>
-                                <h3>{selectedSong && `${selectedSong.duration}`}</h3>
+                                <SongDetail />
                             </div>
                         </Grid.Column>
                     </Grid.Row>
@@ -38,8 +38,7 @@ class SongList extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        songs: state.songs,
-        selectedSong: state.selectedSong
+        songs: state.songs
     };
 }
 
