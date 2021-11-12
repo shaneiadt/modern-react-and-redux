@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 import { Button, Item, Container, Grid } from 'semantic-ui-react';
 
 class SongList extends Component {
+    onClick = (title) => {
+        console.log(title);
+        // const { dispatch } = this.props;
+    }
+
     render() {
         const { songs } = this.props;
 
@@ -17,7 +22,7 @@ class SongList extends Component {
                                     <Item.Content style={{ display: 'flex', alignItems: 'center' }}>
                                         <Item.Header><strong>{title}</strong> - {duration}</Item.Header>
                                         <Item.Extra style={{ flexGrow: '1', textAlign: 'right' }}>
-                                            <Button>Select</Button>
+                                            <Button onClick={() => this.onClick(title)}>Select</Button>
                                         </Item.Extra>
                                     </Item.Content>
                                 </Item>)}
