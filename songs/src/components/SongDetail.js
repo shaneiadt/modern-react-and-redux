@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const SongDetail = ({ selectedSong }) => {
+const SongDetail = ({ song }) => {
     return (
         <>
-            {selectedSong ?
+            {song ?
                 <>
-                    <h1>{selectedSong.title}</h1>
-                    <h2>{selectedSong.duration}</h2>
+                    <h1>{song.title}</h1>
+                    <h2>{song.duration}</h2>
                 </>
                 :
                 <h2>No Song Selected</h2>
@@ -18,7 +18,7 @@ const SongDetail = ({ selectedSong }) => {
 
 const mapStateToProps = (state) => {
     return {
-        selectedSong: state.selectedSong
+        song: state.selectedSong
     }
 }
 
