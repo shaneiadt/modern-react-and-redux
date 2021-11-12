@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-
 import { Button, Item, Container, Grid } from 'semantic-ui-react';
 
-class SongList extends Component {
-    onClick = (title) => {
-        console.log(title);
-        // const { dispatch } = this.props;
-    }
+import { selectSong } from '../actions';
 
+class SongList extends Component {
     render() {
         const { songs, selectedSong } = this.props;
-
-        console.log(this.props);
 
         return (
             <Container>
@@ -24,7 +18,7 @@ class SongList extends Component {
                                     <Item.Content style={{ display: 'flex', alignItems: 'center' }}>
                                         <Item.Header><strong>{title}</strong> - {duration}</Item.Header>
                                         <Item.Extra style={{ flexGrow: '1', textAlign: 'right' }}>
-                                            <Button onClick={() => this.onClick(title)}>Select</Button>
+                                            <Button onClick={() => this.props.selectSong(title)}>Select</Button>
                                         </Item.Extra>
                                     </Item.Content>
                                 </Item>)}
@@ -48,4 +42,4 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps)(SongList);
+export default connect(mapStateToProps, { selectSong })(SongList);
