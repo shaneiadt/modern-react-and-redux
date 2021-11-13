@@ -8,7 +8,8 @@ export const componentDidMount = () => {
 
 export const fetchPosts = () => {
     return (dispatch, getState) => {
-        posts.get('/posts')
+        posts
+            .get('/posts')
             .then(response => {
                 dispatch({
                     type: 'FETCH_POSTS',
