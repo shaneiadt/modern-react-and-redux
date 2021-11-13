@@ -1,6 +1,6 @@
 import React from "react";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
      blog app
@@ -8,4 +8,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
