@@ -10,14 +10,15 @@ class PostList extends Component {
 
     render() {
         return (
-            <div>Post List</div>
+            <div>{this.props.posts.length}</div>
         );
     }
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
-        posts: []
+        posts: state.posts
     }
 }
 

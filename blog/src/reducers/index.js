@@ -1,3 +1,12 @@
 import { combineReducers } from "redux";
 
-export default combineReducers({ temp: () => 'temp' });
+const postsReducer = (oldPosts = [], action) => {
+    switch (action.type) {
+        case 'FETCH_POSTS':
+            return oldPosts;
+        default:
+            return [];
+    }
+}
+
+export default combineReducers({ posts: postsReducer });
