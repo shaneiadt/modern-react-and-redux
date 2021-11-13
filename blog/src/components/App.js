@@ -1,11 +1,12 @@
 import React from "react";
+import { Container } from 'semantic-ui-react';
 
 const App = () => {
   return (
-    <div className="App">
-     blog app
-    </div>
+    <Container>
+      blog app
+    </Container>
   );
 }
 
-export default App; 
+export default App;
