@@ -1,3 +1,5 @@
+import posts from '../apis/jsonPlaceholder';
+
 export const componentDidMount = () => {
     return {
         type: 'MOUNTED'
@@ -5,7 +7,13 @@ export const componentDidMount = () => {
 }
 
 export const fetchPosts = () => {
-    return {
-        type: 'FETCH_POSTS'
+    return (dispatch, getState) => {
+        posts.get('/posts')
+            .then(response => {
+                dispatch({
+                    type: 'FETCH_POSTS',
+                    payload: response
+                });
+            });
     }
 }
