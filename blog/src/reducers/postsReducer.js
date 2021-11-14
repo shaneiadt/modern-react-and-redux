@@ -1,8 +1,7 @@
-const postsReducer = (oldPosts = [], action) => {
-    console.log({oldPosts});
-    switch (action.type) {
+const postsReducer = (oldPosts, { type, payload }) => {
+    switch (type) {
         case 'FETCH_POSTS':
-            return oldPosts;
+            return [...oldPosts, ...payload.data];
         default:
             return [];
     }
