@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
+import Auth from "./components/Auth/Auth";
 
 
 const Header = () => {
@@ -29,12 +30,8 @@ const Header = () => {
                 >
                     Streams
                 </Menu.Item>
-                <Menu.Item
-                    name='/'
-                    active={activeItem === '/login'}
-                    onClick={() => onClick('/')}
-                >
-                    Login
+                <Menu.Item>
+                    <Auth />
                 </Menu.Item>
             </Menu.Menu>
         </Menu>
