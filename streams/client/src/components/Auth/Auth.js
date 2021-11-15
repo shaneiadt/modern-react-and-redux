@@ -17,11 +17,17 @@ class Auth extends Component {
                         this.auth = window.gapi.auth2.getAuthInstance();
 
                         this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+
+                        this.auth.isSignedIn.listen(this.onAuthChange);
                     });
             });
         } catch (error) {
             console.error(error);
         }
+    }
+
+    onAuthChange = () => {
+        this.setState({ isSignedIn: this.auth.isSignedIn.get() });
     }
 
     renderAuthButton = () => {
