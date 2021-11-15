@@ -12,7 +12,6 @@ export const fetchPosts = () => {
 }
 
 export const fetchUser = (userId) => async (dispatch, getState) => {
-    console.log('getState', getState());
     const response = await jsonPlaceholder.get(`/users/${userId}`);
 
     dispatch({
