@@ -6,8 +6,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <Route path="/" render={() => <p>Page 1</p>} />
-      <Route path="/2" render={() => <p>Page 2</p>} />
+      <Route path="/" exact render={() => <p>Page 1</p>} />
+      <Route path="/2" exact render={() => <p>Page 2</p>} />
     </BrowserRouter>
   );
 }
