@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button, Icon, Loader } from "semantic-ui-react";
 
 class Auth extends Component {
     state = {
@@ -31,9 +32,9 @@ class Auth extends Component {
     }
 
     renderAuthButton = () => {
-        if (this.state.isSignedIn === null) return <div>I don't know if we are signed in!</div>;
-        else if (this.state.isSignedIn) return <div>I am signed in :)</div>;
-        else return <div>I am not signed in :(</div>;
+        if (this.state.isSignedIn === null) return <Loader active inline='centered' size="small" />;
+        else if (this.state.isSignedIn) return <Button color='google plus' onClick={() => this.auth.signOut()}><Icon name='google plus' /> Sign Out</Button>;
+        else return <Button color='google plus' onClick={() => this.auth.signIn()}><Icon name='google plus' /> Sign In</Button>;
     }
 
     render() {
