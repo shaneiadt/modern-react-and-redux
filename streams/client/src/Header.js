@@ -1,36 +1,40 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 
-const activeItem = 'browse';
 
 const Header = () => {
+    const history = useHistory();
+    const [activeItem, setActiveItem] = useState('');
+
+    const onClick = (path) => {
+        setActiveItem(path);
+        history.push(path);
+    }
+
     return (
         <Menu>
             <Menu.Item
-                name='browse'
-                active={activeItem === 'browse'}
+                name='/'
+                active={activeItem === '/'}
+                onClick={() => onClick('/')}
             >
-                <Link to="/">Browse</Link>
-            </Menu.Item>
-            <Menu.Item
-                name='submit'
-                active={activeItem === 'submit'}
-            >
-                <Link to="/2">Submit</Link>
+                Streamer
             </Menu.Item>
             <Menu.Menu position='right'>
                 <Menu.Item
-                    name='signup'
-                    active={activeItem === 'signup'}
+                    name='/streams/show'
+                    active={activeItem === '/streams/show'}
+                    onClick={() => onClick('/streams/show')}
                 >
-                    Sign Up
+                    Streams
                 </Menu.Item>
                 <Menu.Item
-                    name='help'
-                    active={activeItem === 'help'}
+                    name='/'
+                    active={activeItem === '/login'}
+                    onClick={() => onClick('/')}
                 >
-                    Help
+                    Login
                 </Menu.Item>
             </Menu.Menu>
         </Menu>
