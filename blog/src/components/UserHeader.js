@@ -10,17 +10,15 @@ class UserHeader extends Component {
     }
 
     render() {
-        const user = this.props.users.find(user => user.id === this.props.userId);
+        if (!this.props.user) return null;
 
-        if (!user) return null;
-
-        return <Item.Extra>{user.name}</Item.Extra>
+        return <Item.Extra>{this.props.user.name}</Item.Extra>
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        users: state.users
+        user: state.users.find(user => user.id === ownProps.userId)
     }
 }
 
