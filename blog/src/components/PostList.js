@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Item } from 'semantic-ui-react';
 
 import { fetchPosts } from '../actions';
+import UserHeader from "./UserHeader";
 
 class PostList extends Component {
     componentDidMount() {
@@ -17,13 +18,14 @@ class PostList extends Component {
 
         return (
             <Item.Group>
-                {posts.map(({ id, title, body }) => (
+                {posts.map(({ userId, id, title, body }) => (
                     <Item key={id}>
                         <Item.Content>
                             <Item.Header as='h2'>{title}</Item.Header>
                             <Item.Description>
                                 {body}
                             </Item.Description>
+                            <UserHeader userId={userId} />
                         </Item.Content>
                     </Item>
                 ))}
