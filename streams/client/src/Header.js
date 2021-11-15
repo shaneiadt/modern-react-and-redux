@@ -13,7 +13,7 @@ const Header = () => {
     }
 
     return (
-        <Menu>
+        <Menu style={{ marginTop: '20px' }}>
             <Menu.Item
                 name='/'
                 active={activeItem === '/'}
