@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Button, Icon, Loader } from "semantic-ui-react";
+import { connect } from 'react-redux';
+
+import { signIn, signOut } from '../../actions';
 
 class Auth extends Component {
     state = {
@@ -24,11 +27,15 @@ class Auth extends Component {
             });
         } catch (error) {
             console.error(error);
-        } 
+        }
     }
 
-    onAuthChange = () => {
-        this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+    onAuthChange = (isSignedIn) => {
+        if (isSignedIn) {
+            this.props.signIn();
+        } else {
+            this.props.signOut();
+        }
     }
 
     renderAuthButton = () => {
@@ -42,4 +49,10 @@ class Auth extends Component {
     }
 }
 
-export default Auth;
+const mapStateToProps = (state) => {
+    return {
+        auth: false
+    }
+}
+
+export default connect(mapStateToProps, { signIn, signOut })(Auth);
