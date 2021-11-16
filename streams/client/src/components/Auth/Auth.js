@@ -5,10 +5,6 @@ import { connect } from 'react-redux';
 import { signIn, signOut } from '../../actions';
 
 class Auth extends Component {
-    state = {
-        isSignedIn: null
-    };
-
     componentDidMount() {
         try {
             window.gapi.load('client:auth2', () => {
@@ -20,7 +16,7 @@ class Auth extends Component {
                     .then(() => {
                         this.auth = window.gapi.auth2.getAuthInstance();
 
-                        this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+                        this.onAuthChange(this.auth.isSignedIn.get());
 
                         this.auth.isSignedIn.listen(this.onAuthChange);
                     });
@@ -39,8 +35,8 @@ class Auth extends Component {
     }
 
     renderAuthButton = () => {
-        if (this.state.isSignedIn === null) return <Loader active inline='centered' size="small" />;
-        else if (this.state.isSignedIn) return <Button color='google plus' onClick={() => this.auth.signOut()}><Icon name='google plus' /> Sign Out</Button>;
+        if (this.props.isSignedIn === null) return <Loader active inline='centered' size="small" />;
+        else if (this.props.isSignedIn) return <Button color='google plus' onClick={() => this.auth.signOut()}><Icon name='google plus' /> Sign Out</Button>;
         else return <Button color='google plus' onClick={() => this.auth.signIn()}><Icon name='google plus' /> Sign In</Button>;
     }
 
@@ -51,7 +47,7 @@ class Auth extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        auth: false
+        isSignedIn: state.auth.isSignedIn
     }
 }
 
