@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './Header';
-import { StreamList, StreamCreate, StreamEdit, StreamShow, StreamDelete } from './components/Streams';
+import { StreamList, StreamEdit, StreamShow, StreamDelete, StreamCreate } from './components/Streams';
 import { Container } from 'semantic-ui-react';
 
 const App = () => {
