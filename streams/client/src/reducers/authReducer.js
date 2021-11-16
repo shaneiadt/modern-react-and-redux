@@ -1,4 +1,4 @@
-import { ACTIONS } from "../actions/actionTypes";
+import { ACTIONS } from "../actions/types";
 
 const INITIAL_STATE = {
     isSignedIn: null
