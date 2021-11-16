@@ -28,7 +28,7 @@ class Auth extends Component {
 
     onAuthChange = (isSignedIn) => {
         if (isSignedIn) {
-            this.props.signIn();
+            this.props.signIn(this.auth.currentUser.get().getId());
         } else {
             this.props.signOut();
         }
@@ -46,6 +46,7 @@ class Auth extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
         isSignedIn: state.auth.isSignedIn
     }
