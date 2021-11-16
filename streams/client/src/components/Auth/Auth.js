@@ -24,7 +24,7 @@ class Auth extends Component {
             });
         } catch (error) {
             console.error(error);
-        }
+        } 
     }
 
     onAuthChange = () => {
