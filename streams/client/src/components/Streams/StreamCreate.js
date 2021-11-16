@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from 'redux-form';
+import { Input } from 'semantic-ui-react';
 
-export class StreamCreate extends Component {
+class StreamCreate extends Component {
+    renderInput = ({ input }) => <Input {...input} />;
+
     render() {
         return (
-            <div>StreamCreate</div>
+            <form>
+                <Field name='title' component={this.renderInput} />
+                <Field name='desc' component={this.renderInput} />
+            </form>
         );
     }
 }
+
+export default reduxForm({
+    form: 'streamCreate'
+})(StreamCreate);
