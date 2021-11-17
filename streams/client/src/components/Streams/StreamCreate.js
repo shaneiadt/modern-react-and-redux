@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from 'redux-form';
-import { Form, Input } from 'semantic-ui-react';
+import { Button, Form, Input } from 'semantic-ui-react';
 
 class StreamCreate extends Component {
     renderInput = (label) => ({ input: props }) => (
@@ -10,11 +10,16 @@ class StreamCreate extends Component {
         </Form.Field>
     );
 
+    onSubmit = (e) => {
+        console.log(e);
+    }
+
     render() {
         return (
-            <Form>
+            <Form onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <Field name='title' component={this.renderInput('Enter Title')} />
                 <Field name='description' component={this.renderInput('Enter Description')} />
+                <Button>Submit</Button>
             </Form>
         );
     }
