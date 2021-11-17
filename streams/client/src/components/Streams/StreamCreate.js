@@ -1,20 +1,12 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from 'redux-form';
-import { Button, Form, Input, Message } from 'semantic-ui-react';
+import { Button, Form, Input, Label } from 'semantic-ui-react';
 
 class StreamCreate extends Component {
-    renderError = (error, touched) => {
-        if (touched && error) {
-            return (
-                <Message negative>
-                    <p>{error}</p>
-                </Message>
-            );
-        }
-    }
+    renderError = (error, touched) => touched && error && <Label basic color='red' pointing>{error}</Label>;
 
     renderInput = ({ input: props, meta: { error, touched }, label }) => (
-        <Form.Field>
+        <Form.Field error={touched && error}>
             <label>{label}</label>
             <Input {...props} autoComplete="off" />
             {this.renderError(error, touched)}
