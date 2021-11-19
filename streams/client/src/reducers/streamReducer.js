@@ -1,4 +1,4 @@
-import { omit } from 'lodash';
+import { omit, mapKeys } from 'lodash';
 
 import { ACTIONS } from "../actions/types";
 
@@ -7,7 +7,7 @@ const INITIAL_STATE = {};
 const streamReducer = (state = INITIAL_STATE, { type, payload }) => {
     switch (type) {
         case ACTIONS.FETCH_STREAMS:
-            return { ...state, ...payload };
+            return { ...state, ...mapKeys(payload, "id") };
         case ACTIONS.DELETE_STREAM:
             return omit(state, payload);
         case ACTIONS.CREATE_STREAM:
