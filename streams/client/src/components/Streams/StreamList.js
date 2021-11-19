@@ -25,8 +25,8 @@ class StreamList extends Component {
                             </List.Content>
                             {userId === this.props.currentUserId && (
                                 <div>
-                                    <Button>Edit</Button>
-                                    <Button color='red'>Delete</Button>
+                                    <Link className="ui button" to={`/streams/edit/${id}`}>Edit</Link>
+                                    <Link className="ui button red" to={`/streams/delete/${id}`}>Delete</Link>
                                 </div>
                             )}
                         </List.Item>
