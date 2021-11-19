@@ -9,7 +9,7 @@ const streamReducer = (state = INITIAL_STATE, { type, payload }) => {
         case ACTIONS.FETCH_STREAMS:
             return { ...state, ...payload };
         case ACTIONS.DELETE_STREAM:
-            return omit({ ...state }, payload);
+            return omit(state, payload);
         case ACTIONS.CREATE_STREAM:
         case ACTIONS.EDIT_STREAM:
         case ACTIONS.FETCH_STREAM:
