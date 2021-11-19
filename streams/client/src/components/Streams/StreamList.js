@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { List, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 import { fetchStreams } from '../../actions';
 
@@ -31,9 +32,9 @@ class StreamList extends Component {
                         </List.Item>
                     ))}
                 </List >
-                {this.props.currentUserId && (
+                {this.props.isSignedIn && (
                     <div style={{ textAlign: 'right' }}>
-                        <Button primary>Create Stream</Button>
+                        <Link className="ui button primary" to="/streams/new">Create Stream</Link>
                     </div>
                 )}
             </>
@@ -44,7 +45,8 @@ class StreamList extends Component {
 const mapStateToProps = (state) => {
     return {
         streams: state.streams,
-        currentUserId: state.auth.userId
+        currentUserId: state.auth.userId,
+        isSignedIn: state.auth.isSignedIn
     }
 }
 
