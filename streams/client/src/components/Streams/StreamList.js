@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { List, Button } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import { fetchStreams } from '../../actions';
