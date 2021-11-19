@@ -9,13 +9,13 @@ class StreamEdit extends Component {
         this.props.fetchStream(this.props.match.params.id);
     }
 
-    onSubmit = (formValues) => this.props.editStream(formValues);
+    onSubmit = (formValues) => this.props.editStream(this.props.match.params.id, formValues);
 
     render() {
         return (
             <>
                 <h3>Edit a Stream</h3>
-                <StreamForm onSubmit={this.onSubmit} />
+                <StreamForm onSubmit={this.onSubmit} initialValues={this.props.stream} />
             </>
         );
     }
