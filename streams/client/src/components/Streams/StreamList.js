@@ -13,6 +13,8 @@ class StreamList extends Component {
         const streams = Object.values(this.props.streams);
 
         return (
+            <>
+            <h2>Streams</h2>
             <List divided>
                 {streams.map(({ id, title, description }) => (
                     <List.Item key={id}>
@@ -23,6 +25,7 @@ class StreamList extends Component {
                     </List.Item>
                 ))}
             </List >
+            </>
         );
     }
 }
