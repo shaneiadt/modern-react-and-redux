@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 import Auth from "./components/Auth/Auth";
@@ -6,26 +6,20 @@ import Auth from "./components/Auth/Auth";
 
 const Header = () => {
     const history = useHistory();
-    const [activeItem, setActiveItem] = useState('');
 
     const onClick = (path) => {
-        setActiveItem(path);
         history.push(path);
     }
 
     return (
         <Menu style={{ marginTop: '20px' }}>
             <Menu.Item
-                name='/'
-                active={activeItem === '/'}
                 onClick={() => onClick('/')}
             >
                 Streamer
             </Menu.Item>
             <Menu.Menu position='right'>
                 <Menu.Item
-                    name='/streams/show'
-                    active={activeItem === '/streams/show'}
                     onClick={() => onClick('/streams/show')}
                 >
                     Streams
