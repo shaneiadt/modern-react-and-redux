@@ -1,6 +1,8 @@
 import streams from '../apis/streams';
 import { ACTIONS } from "./types";
 
+import history from '../history';
+
 export const signIn = (userId) => {
     return {
         type: ACTIONS.SIGN_IN,
@@ -22,6 +24,8 @@ export const createStream = formValues => async (dispatch, getState) => {
         type: ACTIONS.CREATE_STREAM,
         payload: { ...response.data, userId }
     });
+
+    history.push('/');
 }
 
 export const fetchStreams = () => async dispatch => {
