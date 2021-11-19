@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { values } from 'lodash';
 import { List } from 'semantic-ui-react';
 
 import { fetchStreams } from '../../actions';
@@ -11,7 +10,7 @@ class StreamList extends Component {
     }
 
     render() {
-        const streams = values(this.props.streams);
+        const streams = Object.values(this.props.streams);
 
         return (
             <List divided>
