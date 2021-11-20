@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Button } from "semantic-ui-react";
 
 import Modal from '../Modal';
-import { fetchStream } from '../../actions';
+import { fetchStream, deleteStream } from '../../actions';
 import history from '../../history';
 
 class StreamDelete extends Component {
@@ -14,21 +14,19 @@ class StreamDelete extends Component {
     onCancel = () => history.push('/');
 
     onConfirm = () => {
-        alert('CONFIRM');
+        this.props.deleteStream(this.props.match.params.id);
     }
 
-    actions = () => {
-        return (
-            <>
-                <Button negative onClick={this.onCancel}>
-                    Cancel
-                </Button>
-                <Button positive onClick={this.onConfirm}>
-                    Yes
-                </Button>
-            </>
-        );
-    }
+    actions = () =>
+        <>
+            <Button negative onClick={this.onCancel}>
+                Cancel
+            </Button>
+            <Button positive onClick={this.onConfirm}>
+                Yes
+            </Button>
+        </>;
+
 
     render() {
         return this.props.stream ?
@@ -49,4 +47,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps, { fetchStream })(StreamDelete);
+export default connect(mapStateToProps, { fetchStream, deleteStream })(StreamDelete);
