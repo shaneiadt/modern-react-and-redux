@@ -1,23 +1,16 @@
 import React from "react";
-import { Modal as SemanticModal, Button } from "semantic-ui-react";
+import { Modal as SemanticModal } from "semantic-ui-react";
 
-import history from '../history';
-
-const Modal = ({ header, content }) => {
+const Modal = ({ header, content, onClose, actions }) => {
     return (
         <SemanticModal
             open={true}
-            onClose={() => history.push('/')}
+            onClose={onClose}
         >
             <SemanticModal.Header>{header}</SemanticModal.Header>
             <SemanticModal.Content>{content}</SemanticModal.Content>
             <SemanticModal.Actions>
-                <Button negative>
-                    Cancel
-                </Button>
-                <Button positive>
-                    Yes
-                </Button>
+                {actions()}
             </SemanticModal.Actions>
         </SemanticModal>
     );
