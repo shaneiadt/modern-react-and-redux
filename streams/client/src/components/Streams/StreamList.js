@@ -20,7 +20,7 @@ class StreamList extends Component {
                     {streams.map(({ id, title, description, userId }) => (
                         <List.Item key={id} style={{ margin: '10px 0', display: 'flex', flexDirection: 'row', padding: '20px' }}>
                             <List.Content style={{ flexGrow: '1' }}>
-                                <List.Header as='a'>{title}</List.Header>
+                                <List.Header as='a'><Link className="ui" to={`/streams/show/${id}`}>{title}</Link></List.Header>
                                 <List.Description as='a'>{description}</List.Description>
                             </List.Content>
                             {userId === this.props.currentUserId && (
