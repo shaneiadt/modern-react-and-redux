@@ -4,7 +4,7 @@ import Modal from '../Modal';
 
 class StreamDelete extends Component {
     render() {
-        return <Modal />
+        return <Modal header='Delete Stream' content='Are you sure you want to delete stream?' />
     }
 }
 

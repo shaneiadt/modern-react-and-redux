@@ -1,22 +1,22 @@
 import React from "react";
 import { Modal as SemanticModal, Button } from "semantic-ui-react";
 
-const Modal = props => {
+import history from '../history';
+
+const Modal = ({ header, content }) => {
     return (
         <SemanticModal
             open={true}
+            onClose={() => history.push('/')}
         >
-            <SemanticModal.Header>Use Google's location service?</SemanticModal.Header>
-            <SemanticModal.Content>
-                Let Google help apps determine location. This means sending anonymous
-                location data to Google, even when no apps are running.
-            </SemanticModal.Content>
+            <SemanticModal.Header>{header}</SemanticModal.Header>
+            <SemanticModal.Content>{content}</SemanticModal.Content>
             <SemanticModal.Actions>
                 <Button negative>
-                    Disagree
+                    Cancel
                 </Button>
                 <Button positive>
-                    Agree
+                    Yes
                 </Button>
             </SemanticModal.Actions>
         </SemanticModal>
