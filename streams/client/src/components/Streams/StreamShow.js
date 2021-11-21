@@ -19,8 +19,12 @@ class StreamShow extends Component {
         this.buildPlayer();
     }
 
+    componentWillUnmount() {
+        this.flyPlayer.destroy();
+    }
+
     buildPlayer = () => {
-        if (this.player || !this.props.stream) return;
+        if (this.flyPlayer || !this.props.stream) return;
 
         const { match: { params: { id } } } = this.props;
 
