@@ -2,7 +2,7 @@ import { Component, createContext } from "react";
 
 const Context = createContext('english');
 
-class LanguageStore extends Component {
+export class LanguageStore extends Component {
     state = {
         language: 'english'
     };
@@ -18,4 +18,4 @@ class LanguageStore extends Component {
     }
 }
 
-export default LanguageStore;
+export default Context;
