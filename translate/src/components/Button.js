@@ -1,6 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 
-// eslint-disable-next-line
-export default () => (
-    <button className="ui button primary">Submit</button>
-);
+import LanguageContext from "./contexts/LanguageContext";
+
+class Button extends Component {
+    static contextType = LanguageContext;
+
+    render() {
+        return (
+            <button className="ui button primary">Submit</button>
+        );
+    }
+}
+
+export default Button;
