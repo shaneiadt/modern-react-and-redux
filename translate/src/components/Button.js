@@ -19,7 +19,7 @@ class Button extends Component {
                         <SemanticButton color={color}>
                             {/* Consumer context */}
                             <LanguageContext.Consumer>
-                                {(value) => value === 'english' ? 'Submit' : 'Voorleggen'}
+                                {({ language }) => language === 'english' ? 'Submit' : 'Voorleggen'}
                             </LanguageContext.Consumer>
                         </SemanticButton>
                     )
