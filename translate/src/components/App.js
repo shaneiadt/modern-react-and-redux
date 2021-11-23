@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container } from 'semantic-ui-react';
 
 import UserCreate from "./UserCreate";
+import LanguageContext from "./contexts/LanguageContext";
 
 class App extends Component {
   state = {
@@ -20,7 +21,9 @@ class App extends Component {
           <i className="flag us" onClick={() => this.onLanguageChange('english')} />
           <i className="flag nl" onClick={() => this.onLanguageChange('dutch')} />
         </div>
-        <UserCreate />
+        <LanguageContext.Provider value={this.state.language}>
+          <UserCreate />
+        </LanguageContext.Provider>
       </Container>
     );
   }
