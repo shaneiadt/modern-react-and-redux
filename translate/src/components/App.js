@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Container } from 'semantic-ui-react';
+
 import UserCreate from "./UserCreate";
 
 class App extends Component {
@@ -12,14 +14,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <Container>
         <div>
           Select a language:
           <i className="flag us" onClick={() => this.onLanguageChange('english')} />
           <i className="flag nl" onClick={() => this.onLanguageChange('dutch')} />
         </div>
         <UserCreate />
-      </div>
+      </Container>
     );
   }
 }
