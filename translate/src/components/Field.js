@@ -1,9 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
 
-// eslint-disable-next-line
-export default () => (
-    <div className="ui field">
-        <label>Name</label>
-        <input />
-    </div>
-);
+import LanguageContext from "./contexts/LanguageContext";
+
+class Field extends Component {
+    static contextType = LanguageContext;
+
+    render() {
+        return (
+            <div className="ui field">
+                <label>Name</label>
+                <input />
+            </div>
+        );
+    }
+}
+
+export default Field;
