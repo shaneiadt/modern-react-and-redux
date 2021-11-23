@@ -1,3 +1,9 @@
 import React from "react";
 
-export default () => <div>Field</div>
+// eslint-disable-next-line
+export default () => (
+    <div className="ui field">
+        <label>Name</label>
+        <input />
+    </div>
+);

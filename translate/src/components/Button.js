@@ -1,3 +1,6 @@
 import React from "react";
 
-export default () => <div>Button</div>
+// eslint-disable-next-line
+export default () => (
+    <button className="ui primary">Submit</button>
+);
